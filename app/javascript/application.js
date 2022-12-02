@@ -1,15 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Greeting from './Greeting'
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-function App() {
-    return <h1>Hello World!</h1>;
-}
-root.render(<App/>)
-
-//
-// ReactDOM.render(
-//     <App/>,
-//     document.getElementById('root'),
-// );
+ReactDOM.render(
+    <Provider store={store}>
+        <Greeting />
+    </Provider>,
+    document.getElementById('root')
+)
